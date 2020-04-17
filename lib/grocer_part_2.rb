@@ -9,14 +9,13 @@ def apply_coupons(cart, coupons)
   end
   pp coupon_items
   #-----------------------------------------------#
-  ni = 0
+  
   cart.each do |object|
     if coupon_items.include?(object[:item]) == true
       new_object = object
       new_object[:item] = new_object[:item] + " W/COUPON"
       
     end
-    i += 0
     pp new_object
   end
   #-----------------------------------------------#
