@@ -2,18 +2,32 @@ require_relative './part_1_solution.rb'
 require 'pry'
 
 def apply_coupons(cart, coupons)
+  
+  coupon_items = []
+  coupons.each do |object|
+    coupon_items << object[:item]
+  end
+  pp coupon_items
+  #-----------------------------------------------#
+  cart.each do |object|
+    if coupon_items.include?(object[:item]) == true
+      new_object = object
+      new_object[:item] = new_object[:item] + " W/COUPON"
+      
+    end
+    pp new_object
+  end
+  #-----------------------------------------------#
   i = 0
-  coupons.each do |coupon|
-    item_with_coupon = find_item_by_name_in_collection(coupon[:item], cart)
-    item_is_in_basket = !!item_with_coupon
-    count_is_big_enough_to_apply = item_is_in_basket && item_with_coupon[:count] >= coupon[:num]
-    if item_is_in_basket and count_is_big_enough_to_apply
-      cart << { item: "#{item_with_coupon[:item]} W/COUPON", 
-                price: coupon[:cost] / coupon[:num], 
-                clearance: item_with_coupon[:clearance],
-                count: coupon[:num]
-              }
-      item_with_coupon[:count] -= coupon[:num]
+  while i < cart.length do
+    ci = 0
+    while ci < coupons.length do
+      
+      if cart[i][:item].include?(coupons[ci][:item]) == true
+        cart[i][:count] = coupons[ci][:num]
+        cart[i][:price] = (coupons[ci][:cost] / coupons[ci][:num]).round(2)
+      end
+      ci += 1
     end
     i += 1
   end
