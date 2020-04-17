@@ -6,8 +6,8 @@ def apply_coupons(cart, coupons)
   coupons.each do |object|
     has_coupon = find_item_by_name_in_collection(object[:item], cart)
     in_cart = !!has_coupon
-    applicable = true if in_cart = true && has_coupon[:count] >= object[:num]
-    if in_cart = true && applicable
+    applicable = in_cart && has_coupon[:count] >= object[:num]
+    if in_cart && applicable
       cart << {
         :item => "#{has_coupon[:item]} W/COUPON",
         :price => object[:cost] / object[:num],
