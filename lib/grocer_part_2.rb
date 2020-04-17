@@ -3,7 +3,7 @@ require 'pry'
 
 def apply_coupons(cart, coupons)
   coupons.each do |object|
-    has_coupon = 
+    has_coupon = find_item_by_name_in_collection(name, collection)
   
 end
 
