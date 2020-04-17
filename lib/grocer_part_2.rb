@@ -9,7 +9,6 @@ def apply_coupons(cart, coupons)
   end
   pp coupon_items
   #-----------------------------------------------#
-  
   cart.each do |object|
     if coupon_items.include?(object[:item]) == true
       new_object = object
