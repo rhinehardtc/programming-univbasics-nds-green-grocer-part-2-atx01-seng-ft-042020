@@ -3,6 +3,7 @@ require 'pry'
 
 def apply_coupons(cart, coupons)
   coupons.each do |object|
+    has_coupon = 
   
 end
 
