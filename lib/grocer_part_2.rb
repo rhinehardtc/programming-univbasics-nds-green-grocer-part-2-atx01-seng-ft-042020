@@ -7,7 +7,9 @@ def apply_coupons(cart, coupons)
     in_cart = true if has_coupon == true
     applicable = true if in_cart == true && has_coupon[:count] >= object[:num]
     if in_cart == true && applicable
-      cart << 
+      cart << {
+        :item => 
+      }
   
 end
 
