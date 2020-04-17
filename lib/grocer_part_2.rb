@@ -13,6 +13,8 @@ def apply_coupons(cart, coupons)
         :clearance => has_coupon[:clearance],
         :count => object[:num]
       }
+      has_coupon[:count] -= object[:num]
+    end
   
 end
 
