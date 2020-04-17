@@ -2,6 +2,7 @@ require_relative './part_1_solution.rb'
 require 'pry'
 
 def apply_coupons(cart, coupons)
+  i = 0
   coupons.each do |object|
     has_coupon = find_item_by_name_in_collection(object[:item], cart)
     in_cart = true if has_coupon == true
@@ -17,6 +18,7 @@ def apply_coupons(cart, coupons)
     end
     cart
   end
+  i += 1
 end
 
 ##
