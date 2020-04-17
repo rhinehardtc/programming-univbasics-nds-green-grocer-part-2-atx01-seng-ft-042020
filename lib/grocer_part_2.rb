@@ -4,6 +4,7 @@ require 'pry'
 def apply_coupons(cart, coupons)
   coupons.each do |object|
     has_coupon = find_item_by_name_in_collection(object[:item], cart)
+    in_cart = true if has_coupon = true
   
 end
 
