@@ -10,7 +10,7 @@ def apply_coupons(cart, coupons)
       cart << {
         :item => "#{has_coupon[:item]} W/COUPON",
         :price => object[:cost] / object[:num],
-        
+        :clearance => has_coupon[:clearance]
       }
   
 end
