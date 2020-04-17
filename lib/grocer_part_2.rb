@@ -9,7 +9,8 @@ def apply_coupons(cart, coupons)
     if in_cart == true && applicable
       cart << {
         :item => "#{has_coupon[:item]} W/COUPON",
-        :price => (object[:cost] / object[:num]).round(2)
+        :price => object[:cost] / object[:num],
+        
       }
   
 end
