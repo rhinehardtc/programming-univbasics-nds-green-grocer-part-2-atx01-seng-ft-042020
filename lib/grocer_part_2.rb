@@ -16,6 +16,7 @@ def apply_coupons(cart, coupons)
       has_coupon[:count] -= object[:num]
     end
     cart
+  end
 end
 
 ##
